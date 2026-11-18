@@ -1,0 +1,33 @@
+name: B
+reporting_currency: USD
+primary:
+  file: company_B/invoice_lines.csv
+  id_col: line_id
+  id_prefix: ''
+  amount_col: line_amount
+  amount_is_gross: false
+  currency_col: currency
+  rate_col: currency_rate
+  date_col: invoice_date
+  fallback_date_col: posting_date
+  supplier_col: vendor_id
+  description_cols:
+  - line_description
+  - gl_account_description
+  material_col: material_number
+  extra_cols:
+  - material_number
+fx:
+  file: company_B/fx_rates_usd.csv
+  currency_col: currency
+  month_col: month
+  rate_col: units_per_usd
+labels:
+  file: company_B/seed_labels.csv
+  id_col: line_id
+taxonomy:
+  file: company_B/taxonomy_B.csv
+exclusion_features:
+- gl_account_description
+- document_type
+- text

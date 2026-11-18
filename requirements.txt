@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+rapidfuzz
+pyyaml
+scipy
+pyarrow
+matplotlib
+pytest
+# optional, enables multilingual-e5-small zero-shot (needs internet to download the model):
+# sentence-transformers
+# torch

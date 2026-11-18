@@ -1,0 +1,62 @@
+name: A
+reporting_currency: ZAR
+data_dir: ''
+primary:
+  file: company_A/erp_goods_receipts.csv
+  id_col: line_id
+  id_prefix: 'ERP:'
+  amount_col: value_zar
+  amount_is_gross: false
+  date_col: posting_date
+  supplier_col: supplier_name
+  description_cols:
+  - material_short_text
+  - service_short_text
+  po_col: po_number
+  material_col: material_number
+  extra_cols:
+  - material_number
+secondary:
+  file: company_A/invoice_tool_export.csv
+  id_col: tool_record_id
+  id_prefix: 'TOOL:'
+  amount_col: gross_amount
+  amount_is_gross: true
+  vat_col: vat_rate
+  default_vat: 0.15
+  date_col: invoice_date
+  supplier_col: supplier_name_as_captured
+  description_cols:
+  - line_text
+  po_col: po_reference
+  invoice_col: invoice_number
+  status_col: status
+  match_tolerance: 0.01
+status_ok:
+- approved
+- paid
+status_cancelled:
+- cancelled
+labels:
+  file: company_A/labels_A.csv
+  id_col: record_id
+taxonomy:
+  file: company_A/taxonomy_A.csv
+
+exclusion_features:
+- spend_type
+- material_type
+- text
+non_procurement_keywords:
+- "\\bVAT\\b"
+- "\\bGST\\b"
+- sales tax
+- withholding tax
+- royalty
+- inter-company
+- intercompany
+- partner billing
+- financing cost
+- loan repayment
+- interest expense
+- dividend

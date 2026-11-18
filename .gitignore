@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Secrets
+.env
+.env.*
+
+# Confidential assessment data
+data/
+Cantill_DataML_Task_Kit/
+Cantill_DataML_Task_Kit*
+company_A/
+company_B/
+*.parquet
+
+# Notebook files
+.ipynb_checkpoints/
+
+# Temporary files
+*.log
+.DS_Store
+Thumbs.db
+
+# Generated caches and local experiments
+artifacts/
+models/
+*.tmp
+
+# Archives and build/test artifacts
+*.zip
+*.egg-info/
+.coverage
+htmlcov/
+build/
+dist/
+reports/
