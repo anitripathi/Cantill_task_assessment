@@ -1,0 +1,30 @@
+name: C
+reporting_currency: USD
+primary:
+  file: company_C/invoice_lines.csv
+  id_col: line_id
+  id_prefix: ''
+  amount_col: line_amount_usd
+  amount_is_gross: false
+  date_col: invoice_date
+  supplier_col: supplier_name
+  description_cols:
+    - invoice_description
+    - product_service_code
+    - product_service_description
+    - line_description
+    - gl_account_description
+  status_col: status
+  duplicate_cols:
+    - invoice_number
+    - invoice_line
+status_ok:
+  - approved
+status_cancelled:
+  - cancelled
+exclusion_features:
+  - gl_account_description
+  - document_type
+  - text
+taxonomy:
+  file: company_C/category_tree_C.csv
